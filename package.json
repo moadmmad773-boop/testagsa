@@ -1,0 +1,9 @@
+{
+  "name": "shaqa-daily",
+  "version": "1.0.0",
+  "private": true,
+  "description": "واجهة عربية لحجز الشقق اليومية",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
