@@ -1,6 +1,4 @@
-// ==============================
-// عدّل الروابط من هنا فقط
-// ==============================
+// عدّل الروابط ورقم الواتساب من هنا فقط
 const CONFIG = {
   airbnb: "https://www.airbnb.com/",
   gathern: "https://gathern.co/",
@@ -8,23 +6,22 @@ const CONFIG = {
   whatsapp: "https://wa.me/966500000000"
 };
 
-document.getElementById("airbnbLink").href = CONFIG.airbnb;
-document.getElementById("gathernLink").href = CONFIG.gathern;
-document.getElementById("locationLink").href = CONFIG.googleMaps;
-document.getElementById("whatsappTop").href = CONFIG.whatsapp;
+const $ = (selector) => document.querySelector(selector);
+const modal = $("#bookingModal");
 
-document.getElementById("whatsappBottom").addEventListener("click", () => {
-  window.open(CONFIG.whatsapp, "_blank", "noopener");
+["#airbnbLink", "#gathernLink", "#locationLink", "#whatsappTop", "#whatsappModal"].forEach((selector, index) => {
+  const keys = ["airbnb", "gathern", "googleMaps", "whatsapp", "whatsapp"];
+  const element = $(selector);
+  if (element) element.href = CONFIG[keys[index]];
 });
 
-const modal = document.getElementById("bookingModal");
-const openers = document.querySelectorAll("[data-booking]");
-const closers = document.querySelectorAll("[data-close]");
+$("#whatsappBottom")?.addEventListener("click", () => window.open(CONFIG.whatsapp, "_blank", "noopener"));
 
 function openModal() {
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
+  $(".modal-card")?.querySelector("a")?.focus();
 }
 function closeModal() {
   modal.classList.remove("open");
@@ -32,8 +29,8 @@ function closeModal() {
   document.body.style.overflow = "";
 }
 
-openers.forEach(btn => btn.addEventListener("click", openModal));
-closers.forEach(btn => btn.addEventListener("click", closeModal));
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") closeModal();
+document.querySelectorAll("[data-booking]").forEach((button) => button.addEventListener("click", openModal));
+document.querySelectorAll("[data-close]").forEach((button) => button.addEventListener("click", closeModal));
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && modal.classList.contains("open")) closeModal();
 });
