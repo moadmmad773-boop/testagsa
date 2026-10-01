@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="شقتك اليومية — عرض الشقة وروابط الحجز عبر Airbnb وجاذر إن.">
+  <title>شقتك اليومية | حجز الشقة</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="logo-mark" aria-hidden="true">
+          <span class="roof"></span>
+          <span class="house-line"></span>
+          <span class="window">×</span>
+        </div>
+        <p class="eyebrow">إقامة يومية مميزة</p>
+        <h1>شقتك اليومية</h1>
+        <p class="hero-subtitle">إقامة مريحة · خصوصية · موقع مميز</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p>احجز إقامتك بسهولة واختر المنصة المناسبة لك.</p>
+      </section>
+
+      <section class="actions">
+        <button class="action primary" data-booking>
+          <span>احجز الشقة الآن</span>
+          <span class="action-icon">▣</span>
+        </button>
+
+        <a class="action" href="#booking">
+          <span>عرض المواعيد والأسعار</span>
+          <span class="action-icon">▦</span>
+        </a>
+
+        <a class="action" id="locationLink" href="#" target="_blank" rel="noopener">
+          <span>موقع الشقة</span>
+          <span class="action-icon">●</span>
+        </a>
+
+        <a class="action" href="#gallery">
+          <span>شاهد صور الشقة</span>
+          <span class="action-icon">▧</span>
+        </a>
+
+        <a class="action" id="whatsappTop" href="#" target="_blank" rel="noopener">
+          <span>تواصل معنا عبر واتساب</span>
+          <span class="action-icon">◔</span>
+        </a>
+      </section>
+
+      <section class="features" aria-label="مميزات الشقة">
+        <div class="feature">
+          <span class="feature-icon">◒</span>
+          <strong>خصوصية تامة</strong>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">▣</span>
+          <strong>مفروشة بالكامل</strong>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">⌖</span>
+          <strong>موقع استراتيجي</strong>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">⌁</span>
+          <strong>إنترنت سريع</strong>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="gallery">
+        <div class="section-heading">
+          <span></span>
+          <h2>صور الشقة</h2>
+          <span></span>
+        </div>
+        <p class="section-note">استبدل الصور التجريبية بصور شقتك داخل مجلد <code>images</code>.</p>
+        <div class="gallery">
+          <div class="photo photo-1"><span>صورة الصالة</span></div>
+          <div class="photo photo-2"><span>صورة غرفة النوم</span></div>
+          <div class="photo photo-3"><span>صورة المطبخ</span></div>
+          <div class="photo photo-4"><span>صورة الحمام</span></div>
+        </div>
+      </section>
+
+      <section class="booking-section" id="booking">
+        <div class="booking-card">
+          <div class="section-heading gold">
+            <span></span>
+            <h2>متاح للحجز اليومي</h2>
+            <span></span>
+          </div>
+          <p>للاستفسارات والحجز، اختر المنصة التي تفضلها.</p>
+          <button class="whatsapp-button" id="whatsappBottom">واتساب <span>◔</span></button>
+          <button class="small-book" data-booking>عرض منصات الحجز</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>شقتك اليومية</div>
+      <small>إقامة مريحة وخصوصية تامة</small>
+    </footer>
+  </div>
+
+  <div class="modal" id="bookingModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close" data-close aria-label="إغلاق">×</button>
+      <div class="modal-icon">⌂</div>
+      <h2 id="modalTitle">اختر منصة الحجز</h2>
+      <p>الحجز يتم من خلال المنصة التي تختارها، وليس من داخل هذا الموقع.</p>
+
+      <a class="platform airbnb" id="airbnbLink" href="#" target="_blank" rel="noopener">
+        <span class="platform-logo">A</span>
+        <span><strong>Airbnb</strong><small>عرض الشقة والحجز</small></span>
+        <b>←</b>
+      </a>
+
+      <a class="platform gathern" id="gathernLink" href="#" target="_blank" rel="noopener">
+        <span class="platform-logo">ج</span>
+        <span><strong>جاذر إن</strong><small>عرض الشقة والحجز</small></span>
+        <b>←</b>
+      </a>
+
+      <div class="modal-note">تقدر تضيف منصات أخرى لاحقًا من ملف <code>script.js</code>.</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
